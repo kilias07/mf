@@ -1,0 +1,16 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "./hero-section";
+
+.my-blue{
+  background-color: #3673C2;
+}
+.max-w-screen-3xl {
+  max-width: 1920px;
+}
+
+.shadow-bottom {
+  box-shadow: 0 5px 5px -5px #333;
+}

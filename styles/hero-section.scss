@@ -1,0 +1,8 @@
+$bg-img: "../public/assets/images/ML1018_Makro_Oak_Beige_klein2.jpg";
+
+.hero-section {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url($bg-img) no-repeat center top;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
