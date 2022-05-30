@@ -21,6 +21,7 @@ export const FindInspiration = () => {
                     wzorów i stwórz niepowtarzalny wystrój w swoim mieszkaniu.</p>
                 <a href="http://floorstudio.esignserver1.com/my-floor/gallery.do"
                    target="_blank"
+                   rel="noopener noreferrer"
                    className="uppercase text-base bg-blue-600 px-10 py-3 text-slate-200">
                     szukaj inspiracji
                 </a>

@@ -10,6 +10,7 @@ export const BlogSection = ({posts}) => {
                     <a>
                         <div className="mx-3">
                             <Image src={urlFor(post.featuredImage).url()}
+                                   alt={post.title}
                                    width="300px"
                                    height="300px"
                                    objectFit="cover"/>

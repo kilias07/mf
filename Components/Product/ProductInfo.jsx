@@ -22,7 +22,10 @@ export const ProductInfo = ({productInfo}) => {
                 <p className="text-2xl font-light">{productInfo.code}</p>
             </div>
             <div className="my-4">
-                <a href={productInfo.href} target="_blank" className="px-4 py-3 bg-blueButton uppercase text-zinc-100">
+                <a href={productInfo.href}
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="px-4 py-3 bg-blueButton uppercase text-zinc-100">
                     Pokaż w kreatorze wnętrz
                 </a>
             </div>

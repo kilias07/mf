@@ -73,7 +73,7 @@ export const Navbar = () => {
                     <div className="pt-5 pb-2">
                         <Link href='/'>
                             <a>
-                                <img src='/assets/logo-myfloor.png' width='172' height='41' alt="Logo MyFloor"/>
+                                <Image src='/assets/logo-myfloor.png' width='172' height='41' alt="Logo MyFloor"/>
                             </a>
                         </Link>
                     </div>
