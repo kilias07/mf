@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 
 
-const collectionSlug = ({products}) => {
+const CollectionSlug = ({products}) => {
     const router = useRouter();
 
     return (
@@ -32,7 +32,7 @@ const collectionSlug = ({products}) => {
     );
 };
 
-export default collectionSlug;
+export default CollectionSlug;
 
 export async function getStaticPaths() {
 
