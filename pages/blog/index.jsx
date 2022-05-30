@@ -26,7 +26,10 @@ const Index = ({posts}) => {
                     <Link href={`/blog/${post.slug.current}`}>
                         <a>
                             <div key={post._id} className="rounded shadow-lg md:flex full ">
-                                <img className="w-full lg:h-52 min-h-52 md:w-5/12 xl:w-3/12 object-center object-cover" src={urlFor(post.featuredImage)}/>
+                                <img className="w-full lg:h-52 min-h-52 md:w-5/12 xl:w-3/12 object-center object-cover"
+                                     src={urlFor(post.featuredImage)}
+                                    alt={post.title}
+                                />
                                 <div className="md:px-6 px-3 py-4 md:w-7/12">
                                     <div className="font-bold text-xl mb-2">{post.title}</div>
                                     <p className="text-gray-700 text-base">

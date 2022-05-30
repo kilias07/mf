@@ -7,6 +7,7 @@ export const LogosSection = ({logos}) => {
             {logos.map(logo => (
                 <div className="mx-5" key={logo._id}>
                     <Image src={urlFor(logo.featuredImage).url()}
+                           alt={logo.title}
                            width="100px"
                            height="100px"
                            objectFit="contain"/>
