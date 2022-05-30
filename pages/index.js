@@ -3,11 +3,13 @@ import {HeroSection} from "../Components/MainSite/HeroSection";
 import {CollectionSection} from "../Components/MainSite/CollectionSection";
 import {FindInspiration} from "../Components/MainSite/FindInspiration";
 import {BlogSection} from "../Components/MainSite/BlogSection";
+import {LogosSection} from "../Components/MainSite/LogosSection";
 
 
 const collectionQuery = `*[_type == "collection"]{
         _id,
         title,
+        slug,
         description,
         featuredImage
 }`;
@@ -20,14 +22,34 @@ const postsQuery = `*[_type == "posts"]{
   slug
 }`;
 
+const heroSectionQuery = `*[_type == "heroSection"]{
+    title,
+    aditionalText,
+    featuredImage
+}`;
 
-export default function Home({collections, posts}) {
+const certificateQuery = `*[_type == 'certifcateLogo']{
+    _id,
+    title,
+    featuredImage
+}`;
+
+const shopsQuery = `*[_type == 'shopsLogo']{
+    _id,
+    title,
+    featuredImage
+}`;
+
+
+export default function Home({collections, posts, certificateLogos, shopsLogo, heroSection}) {
     return (
         <div className="text-4xl max-w-screen-3xl mx-auto">
-            <HeroSection/>
+            <HeroSection content={heroSection}/>
             <CollectionSection collections={collections}/>
-            <FindInspiration />
-            <BlogSection posts={posts} />
+            <FindInspiration/>
+            <LogosSection logos={certificateLogos}/>
+            <BlogSection posts={posts}/>
+            <LogosSection logos={shopsLogo}/>
         </div>
     )
 }
@@ -35,7 +57,10 @@ export default function Home({collections, posts}) {
 export async function getStaticProps() {
     const collections = await sanityClient.fetch(collectionQuery);
     const posts = await sanityClient.fetch(postsQuery);
+    const certificateLogos = await sanityClient.fetch(certificateQuery);
+    const shopsLogo = await sanityClient.fetch(shopsQuery);
+    const heroSection = await sanityClient.fetch(heroSectionQuery);
     return {
-        props: {collections, posts}
+        props: {collections, posts, certificateLogos, shopsLogo, heroSection}
     }
 }

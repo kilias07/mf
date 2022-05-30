@@ -13,6 +13,7 @@ export const Navbar = () => {
         setModalOpen(prev => !prev);
     }
 
+
     function useOnClickOutside(ref, handler) {
         useEffect(
             () => {
@@ -48,10 +49,6 @@ export const Navbar = () => {
             title: "Blog",
         },
         {
-            link: "/wspolpraca",
-            title: "Współpraca B2B",
-        },
-        {
             link: "/strefa-architekta",
             title: "Strefa Architekta",
         },
@@ -70,33 +67,35 @@ export const Navbar = () => {
     ];
 
     return (
-        <nav ref={ref} className="flex flex-wrap items-center justify-between h-20 shadow-bottom">
-            <div className="container mx-auto flex flex-wrap items-center justify-between">
-                <div className="h-full w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                    <div className="pt-5">
-                        <Link href="/">
+        <nav className="shadow-bottom" ref={ref}>
+            <div className="lg:flex items-center justify-between h-22 items-center container mx-auto">
+                <div className="mx-auto flex flex-wrap justify-between xl:basis-4/12">
+                    <div className="pt-5 pb-2">
+                        <Link href='/'>
                             <a>
-                                <Image src='/assets/logo-myfloor.png' width='172' height='41' alt="Logo MyFloor"/>
+                                <img src='/assets/logo-myfloor.png' width='172' height='41' alt="Logo MyFloor"/>
                             </a>
                         </Link>
                     </div>
-                    <button
-                        className="cursor-pointer text-3xl leading-none px-3 py-1 bg-transparent block lg:hidden outline-none focus:outline-none"
-                        type="button"
-                        onClick={openCloseHamburger}>
-                        {isModalOpen ? <AiOutlineClose/> : <AiOutlineMenu/>}
-                    </button>
+                    <div className="pt-3 pb-2">
+                        <button
+                            className="cursor-pointer text-3xl leading-none px-3 py-1 bg-transparent block lg:hidden outline-none focus:outline-none"
+                            type="button"
+                            onClick={openCloseHamburger}>
+                            {isModalOpen ? <AiOutlineClose/> : <AiOutlineMenu/>}
+                        </button>
+                    </div>
                 </div>
-                <div className={"lg:flex flex-grow items-center" + (isModalOpen ? " flex" : " hidden")}>
-                    <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
-                        {menuItems.map((item,index) => (
+                <div className={`lg:flex items-center ${(isModalOpen ? "block" : " hidden")}`}>
+                    <ul className="flex flex-col lg:flex-row lg:ml-auto">
+                        {menuItems.map((item, index) => (
                             <li
                                 key={index}
-                                className="nav-item">
+                                className="md:flex-none flex justify-center">
                                 <Link href={item.link}>
                                     <a
                                         onClick={openCloseHamburger}
-                                        className="mx-3 py-2 flex items-center text-sm font-bold hover:opacity-75">{item.title}
+                                        className="mx-3 py-2 flex items-center uppercase text-sm font-bold hover:opacity-75 leading-snug text-center">{item.title}
                                     </a>
                                 </Link>
                             </li>

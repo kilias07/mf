@@ -10,7 +10,6 @@ const postsQuery = `*[_type == "posts" && slug.current == $slug][0]{
 
 
 const BlogSlug = ({post}) => {
-    console.log(post.description)
     const components = {
         block: {
             h2: ({children}) => <h2 className="text-2xl my-3">{children}</h2>,
@@ -19,7 +18,7 @@ const BlogSlug = ({post}) => {
     }
     return (
         <div className="max-w-screen-3xl mx-auto">
-            <article className="mb-6 px-5">
+            <article className="container mb-6 px-5 mx-auto">
                 <h1 className="text-4xl my-3 text-center">{post.title}</h1>
                 <div>
                     <img src={urlFor(post.featuredImage)} alt={post.title} className="mb-5"/>
@@ -43,21 +42,15 @@ export async function getStaticPaths() {
             }
         }`
     )
-
     return {
         paths,
         fallback: true,
     }
 }
 
-export async function getStaticProps(
-    {
-        params
-    }
-) {
+export async function getStaticProps({params}) {
     const {slug} = params;
     const post = await sanityClient.fetch(postsQuery, {slug});
-
     return {
         props: {
             post

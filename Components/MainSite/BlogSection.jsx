@@ -4,13 +4,9 @@ import Link from "next/link";
 
 export const BlogSection = ({posts}) => {
     return (
-        <>
-        <div className="mx-auto">
-            <p>tu bedom  logotypy</p>
-        </div>
         <div className="mx-auto flex flex-wrap justify-center">
             {posts.map(post => (
-                <Link href={`blog/${post.slug.current}`} key={post._id}>
+                <Link href={`/blog/${post.slug.current}`} key={post._id}>
                     <a>
                         <div className="mx-3">
                             <Image src={urlFor(post.featuredImage).url()}
@@ -23,10 +19,6 @@ export const BlogSection = ({posts}) => {
                 </Link>
             ))}
         </div>
-        <div className="mx-auto">
-            <p>tu będą sklepy</p>
-        </div>
-        </>
     );
 };
 

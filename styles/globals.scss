@@ -14,3 +14,14 @@
 .shadow-bottom {
   box-shadow: 0 5px 5px -5px #333;
 }
+
+.collection-background {
+  //background-repeat: no-repeat;
+  //height: 100%;
+  //width: 100%;
+  background-size: contain;
+}
+
+.test {
+bottom: 40vw;
+}
