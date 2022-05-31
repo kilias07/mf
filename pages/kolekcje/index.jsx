@@ -1,6 +1,7 @@
 import {sanityClient, urlFor} from "../../lib/sanity";
 import Link from "next/link";
 import Image from "next/image";
+import {useRouter} from "next/router";
 
 const collectionQuery = `*[_type == "collection"]{
         _id,
@@ -10,8 +11,12 @@ const collectionQuery = `*[_type == "collection"]{
         featuredImage,
 }`;
 
-const collections = ({collectionsProducts}) => {
-    // console.log(collectionsProducts[0].slug.current)
+const Collections = ({collectionsProducts}) => {
+    const router = useRouter();
+
+    if(!collectionsProducts){
+        return <div>Loading...</div>
+    }
     return (
         <div className="max-w-screen-3xl mx-auto flex flex-wrap my-32 justify-center">
             {collectionsProducts?.length > 0 && collectionsProducts.map(collection => (
@@ -37,7 +42,7 @@ const collections = ({collectionsProducts}) => {
     );
 };
 
-export default collections;
+export default Collections;
 
 
 

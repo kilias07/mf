@@ -1,5 +1,6 @@
 import {sanityClient, urlFor} from "../../lib/sanity";
-import {PortableText, PortableTextComponentsProvider,} from '@portabletext/react'
+import {PortableText, PortableTextComponentsProvider,} from '@portabletext/react';
+import {useRouter} from "next/router";
 
 const postsQuery = `*[_type == "posts" && slug.current == $slug][0]{
         _id,
@@ -10,11 +11,17 @@ const postsQuery = `*[_type == "posts" && slug.current == $slug][0]{
 
 
 const BlogSlug = ({post}) => {
+    const router = useRouter();
+
     const components = {
         block: {
             h2: ({children}) => <h2 className="text-2xl my-3">{children}</h2>,
             normal: ({children}) => <p className="text-sm">{children}</p>
         }
+    }
+
+    if(router.isFallback){
+        return <div>Loading...</div>
     }
     return (
         <div className="max-w-screen-3xl mx-auto">

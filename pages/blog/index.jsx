@@ -1,5 +1,6 @@
 import {sanityClient, urlFor} from "../../lib/sanity";
 import Link from "next/link";
+import {useRouter} from "next/router";
 
 
 const postsQuery = `*[_type == "posts"]{
@@ -19,6 +20,12 @@ export async function getStaticProps() {
 }
 
 const Index = ({posts}) => {
+    const router = useRouter();
+
+    if(router.isFallback){
+        return <div>Loading...</div>
+    }
+
     return (
         <div className="mx-auto max-w-screen-3xl">
             {posts.map(post => (

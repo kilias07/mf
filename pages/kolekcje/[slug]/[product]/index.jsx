@@ -13,7 +13,13 @@ const certificateQuery = `*[_type == 'certifcateLogo']{
 
 const ProductSlug = ({productData, certificateLogos}) => {
     const collectionName = productData.collection.title
-    const {query: path} = useRouter();
+    const router = useRouter();
+    const {query: path} = router;
+
+    if(router.isFallback){
+        return <div>Loading...</div>
+    }
+
     return (
         <div className="mx-auto">
             <div className="bg-grayDarker py-6 px-12 text-2xl">
@@ -48,7 +54,7 @@ export async function getStaticPaths() {
 
     return {
         paths: products,
-        fallback: true,
+        fallback: false,
     }
 }
 

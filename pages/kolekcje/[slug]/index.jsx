@@ -7,6 +7,9 @@ import Image from "next/image";
 const CollectionSlug = ({products}) => {
     const router = useRouter();
 
+    if(router.isFallback){
+        return <div>Loading...</div>
+    }
     return (
         <div className="max-w-screen-3xl mx-auto flex flex-wrap my-32 justify-center">
             {products.map(product => (
