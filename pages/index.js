@@ -1,9 +1,9 @@
 import {sanityClient, urlFor} from "../lib/sanity";
-import {HeroSection} from "../Components/MainSite/HeroSection";
-import {CollectionSection} from "../Components/MainSite/CollectionSection";
-import {FindInspiration} from "../Components/MainSite/FindInspiration";
-import {BlogSection} from "../Components/MainSite/BlogSection";
-import {LogosSection} from "../Components/MainSite/LogosSection";
+import {HeroSection} from "../components/MainSite/HeroSection";
+import {CollectionSection} from "../components/MainSite/CollectionSection";
+import {FindInspiration} from "../components/MainSite/FindInspiration";
+import {BlogSection} from "../components/MainSite/BlogSection";
+import {LogosSection} from "../components/MainSite/LogosSection";
 
 
 const collectionQuery = `*[_type == "collection"]{

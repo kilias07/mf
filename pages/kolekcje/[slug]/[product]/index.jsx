@@ -1,7 +1,7 @@
 import {sanityClient} from "../../../../lib/sanity";
-import {ProductGallery} from "../../../../Components/Product/ProductGallery";
-import {ProductInfo} from "../../../../Components/Product/ProductInfo";
-import {BoxReference} from "../../../../Components/Product/boxRefernece";
+import {ProductGallery} from "../../../../components/Product/ProductGallery";
+import {ProductInfo} from "../../../../components/Product/ProductInfo";
+import {BoxReference} from "../../../../components/Product/boxRefernece";
 import {useRouter} from "next/router";
 import Link from "next/link";
 
