@@ -2,13 +2,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const Footer = () => {
-    
-    const footerBackgroundStyle = {
-            backgroundImage: ``,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: '700px',
-            backgroundPosition: '0 bottom',
-        };
 
     return (
         <footer className="relative text-center lg:text-left bg-footerGray text-zinc-100">
@@ -20,8 +13,7 @@ export const Footer = () => {
                 objectPosition="left 94%"
 
             />
-            <div className="mx-auto py-20 text-center md:text-left max-w-screen-3xl container relative"
-                 style={footerBackgroundStyle}>
+            <div className="mx-auto py-20 text-center md:text-left max-w-screen-3xl container relative">
                 <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-12">
                     <div className="mt-6">
                         <p className="uppercase mb-2 flex justify-center md:justify-start">
