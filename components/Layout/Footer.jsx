@@ -11,7 +11,6 @@ export const Footer = () => {
                 layout="fill"
                 objectFit="contain"
                 objectPosition="left 94%"
-
             />
             <div className="mx-auto py-20 text-center md:text-left max-w-screen-3xl container relative">
                 <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-12">
