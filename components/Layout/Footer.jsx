@@ -6,7 +6,7 @@ export const Footer = () => {
     return (
         <footer className="relative text-center lg:text-left bg-footerGray text-zinc-100">
             <Image
-                src="/assets/logoPlanko.png"
+                src="/czarneLogoPlanko.png"
                 alt="logoPlanko"
                 layout="fill"
                 objectFit="contain"
