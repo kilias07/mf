@@ -5,7 +5,7 @@ import Image from "next/image";
 export const Footer = () => {
 
     const footerBackgroundStyle = {
-            backgroundImage: `url('/assets/logoPlanko.png')`,
+            backgroundImage: 'url("./assets/logoPlanko.png")',
             backgroundRepeat: 'no-repeat',
             backgroundSize: '700px',
             backgroundPosition: '0 bottom',

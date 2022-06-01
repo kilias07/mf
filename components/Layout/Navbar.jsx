@@ -79,8 +79,9 @@ export const Navbar = () => {
                     </div>
                     <div className="pt-3 pb-2">
                         <button
-                            className="cursor-pointer text-3xl leading-none px-3 py-1 bg-transparent block lg:hidden outline-none focus:outline-none"
+                            className="cursor-pointer text-3xl leading-none mx-3 my-1 bg-transparent block lg:hidden outline-none focus:outline-none"
                             type="button"
+                            aria-label="menu"
                             onClick={openCloseHamburger}>
                             {isModalOpen ? <AiOutlineClose/> : <AiOutlineMenu/>}
                         </button>
