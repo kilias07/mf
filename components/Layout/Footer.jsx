@@ -1,19 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
 
-
 export const Footer = () => {
-
+    
     const footerBackgroundStyle = {
-            backgroundImage: 'url("/assets/logoPlanko.png")',
+            backgroundImage: ``,
             backgroundRepeat: 'no-repeat',
             backgroundSize: '700px',
             backgroundPosition: '0 bottom',
         };
 
     return (
-        <footer className="text-center lg:text-left bg-footerGray text-zinc-100">
-            <div className="mx-auto py-20 text-center md:text-left max-w-screen-3xl container"
+        <footer className="relative text-center lg:text-left bg-footerGray text-zinc-100">
+            <Image
+                src="/assets/logoPlanko.png"
+                alt="logoPlanko"
+                layout="fill"
+                objectFit="contain"
+                objectPosition="left 94%"
+
+            />
+            <div className="mx-auto py-20 text-center md:text-left max-w-screen-3xl container relative"
                  style={footerBackgroundStyle}>
                 <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-12">
                     <div className="mt-6">
@@ -133,7 +140,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="text-center p-4 bg-copyRight border-t border-t-zinc-600">
+            <div className="text-center p-4 bg-copyRight border-t border-t-zinc-600 relative">
                 <span>© {new Date().getFullYear()} Copyright:
                      <a className="font-semibold" href="https://developard.pl/"> Developard</a>
                 </span>

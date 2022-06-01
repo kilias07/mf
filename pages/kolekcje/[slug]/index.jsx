@@ -16,7 +16,7 @@ const CollectionSlug = ({products}) => {
                 <div key={product._id} className="w-80 h-80 m-5 relative">
                     <Link href={`${router.asPath}/${product.slug.current}/`}>
                         <a>
-                                <Image src={`${urlFor(product.featuredImage).url()}`}
+                                <Image src={`${urlFor(product.featuredImage)}`}
                                        alt={product.title}
                                        layout="fill"
                                        priority
