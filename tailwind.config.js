@@ -12,7 +12,7 @@ module.exports = {
                 grayText: '#707070',
                 blueButton: '#3673C2',
                 footerGray: '#424242',
-                copyRight: '#5b5b5b',
+                copyRight: '#1E1E1E',
             }
         },
     },

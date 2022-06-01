@@ -1,11 +1,20 @@
-import {AiFillFacebook, AiFillInstagram} from "react-icons/ai";
-import {BsPinterest} from "react-icons/bs";
 import Link from "next/link";
 import Image from "next/image";
+
+
 export const Footer = () => {
+
+    const footerBackgroundStyle = {
+            backgroundImage: `url('/assets/logoPlanko.png')`,
+            backgroundRepeat: 'no-repeat',
+            backgroundSize: '700px',
+            backgroundPosition: '0 bottom',
+        };
+
     return (
         <footer className="text-center lg:text-left bg-footerGray text-zinc-100">
-            <div className="mx-auto py-20 text-center md:text-left max-w-screen-3xl container footer-logo">
+            <div className="mx-auto py-20 text-center md:text-left max-w-screen-3xl container"
+                 style={footerBackgroundStyle}>
                 <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-12">
                     <div className="mt-6">
                         <p className="uppercase mb-2 flex justify-center md:justify-start">
@@ -124,7 +133,7 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="text-center p-4 bg-copyRight">
+            <div className="text-center p-4 bg-copyRight border-t border-t-zinc-600">
                 <span>© {new Date().getFullYear()} Copyright:
                      <a className="font-semibold" href="https://developard.pl/"> Developard</a>
                 </span>

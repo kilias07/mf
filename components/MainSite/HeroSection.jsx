@@ -6,13 +6,14 @@ export const HeroSection = ({content}) => {
     const {title, aditionalText, featuredImage: image} = content[0];
     return (
         <>
-                <div className="">
+                <div>
                     <Image
                         src={`${urlFor(image)}`}
                         alt={title}
                         width="1920"
                         height="1080"
                         layout="responsive"
+                        priority
                         objectFit="raw"/>
                     <div
                         className="relative z-10 bottom-[50vw] sm:bottom-[42vw] lg:bottom-[38vw] xl:bottom-[32vw] 2xl:bottom-[30rem] text-slate-200 flex justify-center flex-col items-center text-center">
