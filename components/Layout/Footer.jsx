@@ -4,55 +4,104 @@ import Link from "next/link";
 import Image from "next/image";
 export const Footer = () => {
     return (
-        <footer className="text-center lg:text-left bg-gray-100 text-gray-600">
-            <div className="mx-6 py-10 text-center md:text-left">
-                <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div className="">
-                        <h6 className="uppercase font-semibold mb-4 flex items-center justify-center md:justify-start">
-                            Tailwind ELEMENTS
-                        </h6>
-                        <p>
-                            Here you can use rows and columns to organize your footer content. Lorem ipsum dolor
-                            sit amet, consectetur adipisicing elit.
+        <footer className="text-center lg:text-left bg-footerGray text-zinc-100">
+            <div className="mx-auto py-20 text-center md:text-left max-w-screen-3xl container footer-logo">
+                <div className="grid grid-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mx-12">
+                    <div className="mt-6">
+                        <p className="uppercase mb-2 flex justify-center md:justify-start">
+                            <Link href="/blog">
+                                <a>blog</a>
+                            </Link>
+                        </p>
+                        <p className="uppercase mb-2 flex justify-center md:justify-start">
+                            <Link href="/strefa-architekta">
+                                <a>strefa architekta</a>
+                            </Link>
+                        </p>
+                        <p className="uppercase mb-2 flex justify-center md:justify-start">
+                            <Link href="/zastosowanie">
+                                <a>zastosowanie</a>
+                            </Link>
+                        </p>
+                        <p className="mb-2 flex justify-center md:justify-start">
+                            <Link href="/blog">
+                                <a className="">Podłogi do salonu</a>
+                            </Link>
+                        </p>
+                        <p className="mb-2 flex justify-center md:justify-start">
+                            <Link href="/blog">
+                                <a className="">Podłogi do kuchni</a>
+                            </Link>
+                        </p>
+                        <p className="mb-2 flex justify-center md:justify-start">
+                            <Link href="/blog">
+                                <a className="">Podłogi do sypialni</a>
+                            </Link>
                         </p>
                     </div>
-                    <div className="">
-                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                            Products
-                        </h6>
-                        <p className="mb-4">
-                            <a href="#!" className="text-gray-600">Angular</a>
+
+
+                    <div className="mt-6">
+                        <p className="uppercase mb-2 flex justify-center md:justify-start">
+                            <Link href="/infromacje">
+                                <a>informacje</a>
+                            </Link>
                         </p>
-                        <p className="mb-4">
-                            <a href="#!" className="text-gray-600">React</a>
+                        <p className="capitalize mb-2 flex justify-center md:justify-start">
+                            <Link href="/strefa-architekta">
+                                <a>strefa architekta</a>
+                            </Link>
                         </p>
-                        <p className="mb-4">
-                            <a href="#!" className="text-gray-600">Vue</a>
+                        <p className="capitalize mb-2 flex justify-center md:justify-start">
+                            <Link href="/powierzchnie-i-struktury">
+                                <a>do pobrania</a>
+                            </Link>
                         </p>
-                        <p>
-                            <a href="#!" className="text-gray-600">Laravel</a>
+                        <p className="capitalize mb-2 flex justify-center md:justify-start">
+                            <Link href="/akcesoria">
+                                <a>akcesoria</a>
+                            </Link>
+                        </p>
+                        <p className="mb-2 flex justify-center md:justify-start">
+                            <Link href="/blog">
+                                <a>Specyfikacja techniczna</a>
+                            </Link>
+                        </p>
+                        <p className="mb-2 flex justify-center md:justify-start">
+                            <Link href="/blog">
+                                <a>Gwarancja jakości</a>
+                            </Link>
                         </p>
                     </div>
-                    <div className="">
-                        <h6 className="uppercase font-semibold mb-4 flex justify-center md:justify-start">
-                            Useful links
-                        </h6>
-                        <p className="mb-4">
-                            <a href="#!" className="text-gray-600">Pricing</a>
+
+                    <div className="mt-6">
+                        <p className="uppercase mb-2 flex justify-center md:justify-start">
+                            <Link href="/">
+                                <a>my floor</a>
+                            </Link>
                         </p>
-                        <p className="mb-4">
-                            <a href="#!" className="text-gray-600">Settings</a>
+                        <p className="mb-2 flex justify-center md:justify-start">
+                            <Link href="/znajdz-salon">
+                                <a>Znajdź salon</a>
+                            </Link>
                         </p>
-                        <p className="mb-4">
-                            <a href="#!" className="text-gray-600">Orders</a>
+                        <p className="capitalize mb-2 flex justify-center md:justify-start">
+                            <Link href="/kontakt">
+                                <a>kontakt</a>
+                            </Link>
                         </p>
-                        <p>
-                            <a href="#!" className="text-gray-600">Help</a>
+                        <p className="mb-2 flex justify-center md:justify-start">
+                            <Link href="/mapa-strony">
+                                <a>Mapa strony</a>
+                            </Link>
                         </p>
+
                     </div>
-                    <div className="">
+
+
+                    <div className="mt-6">
                         <Link href="/" >
-                            <a >
+                            <a>
                                 <Image src='/assets/logo-myfloor.png' width='172' height='41' alt="Logo MyFloor" />
                             </a>
                         </Link>
@@ -75,9 +124,9 @@ export const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className="text-center p-6 bg-gray-200">
+            <div className="text-center p-4 bg-copyRight">
                 <span>© {new Date().getFullYear()} Copyright:
-                     <a className="text-gray-600 font-semibold" href="https://developard.pl/"> Developard</a>
+                     <a className="font-semibold" href="https://developard.pl/"> Developard</a>
                 </span>
 
             </div>

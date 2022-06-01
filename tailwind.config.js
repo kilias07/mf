@@ -11,6 +11,8 @@ module.exports = {
                 grayDarker: '#6F6F6F',
                 grayText: '#707070',
                 blueButton: '#3673C2',
+                footerGray: '#424242',
+                copyRight: '#5b5b5b',
             }
         },
     },
