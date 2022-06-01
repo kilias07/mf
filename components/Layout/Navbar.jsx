@@ -71,9 +71,9 @@ export const Navbar = () => {
             <div className="lg:flex items-center justify-between h-22 items-center container mx-auto">
                 <div className="mx-auto flex flex-wrap justify-between xl:basis-4/12">
                     <div className="pt-5 pb-2">
-                        <Link href='/'>
+                        <Link href='/' passHref>
                             <a>
-                                <Image src='/assets/logo-myfloor.png' width='172' height='41' alt="Logo MyFloor"/>
+                                <Image src='/assets/logo-mf-czarne.png' width='172' height='41' alt="Logo MyFloor" priority/>
                             </a>
                         </Link>
                     </div>

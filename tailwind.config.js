@@ -13,6 +13,9 @@ module.exports = {
                 blueButton: '#3673C2',
                 footerGray: '#424242',
                 copyRight: '#1E1E1E',
+            },
+            screens: {
+                'xsm': '380px',
             }
         },
     },

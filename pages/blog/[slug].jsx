@@ -28,7 +28,10 @@ const BlogSlug = ({post}) => {
             <article className="container mb-6 px-5 mx-auto">
                 <h1 className="text-4xl my-3 text-center">{post.title}</h1>
                 <div>
-                    <img src={urlFor(post.featuredImage)} alt={post.title} className="mb-5"/>
+                    <img
+                        src={urlFor(post.featuredImage)}
+                        alt={post.title}
+                        className="mb-5"/>
                 </div>
                 <PortableTextComponentsProvider components={components}>
                     <PortableText value={post.description}/>

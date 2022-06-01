@@ -1,6 +1,7 @@
 import {sanityClient, urlFor} from "../../lib/sanity";
 import Link from "next/link";
 import {useRouter} from "next/router";
+import Image from "next/image";
 
 
 const postsQuery = `*[_type == "posts"]{
@@ -29,14 +30,19 @@ const Index = ({posts}) => {
     return (
         <div className="mx-auto max-w-screen-3xl">
             {posts.map(post => (
-                <div className="mx-24 my-6" key={post._id}>
+                <div className="mx-4 my-6 md:mx-32" key={post._id}>
                     <Link href={`/blog/${post.slug.current}`}>
                         <a>
-                            <div key={post._id} className="rounded shadow-lg md:flex full ">
-                                <img className="w-full lg:h-52 min-h-52 md:w-5/12 xl:w-3/12 object-center object-cover"
-                                     src={urlFor(post.featuredImage)}
-                                    alt={post.title}
-                                />
+                            <div key={post._id} className="rounded shadow-lg md:flex">
+                                <div className="relative w-full md:w-80 h-64">
+                                    <Image
+                                        src={`${urlFor(post.featuredImage).url()}`}
+                                        alt={post.title}
+                                        layout="fill"
+                                        objectFit="cover"
+                                        objectPosition="center"
+                                    />
+                                </div>
                                 <div className="md:px-6 px-3 py-4 md:w-7/12">
                                     <div className="font-bold text-xl mb-2">{post.title}</div>
                                     <p className="text-gray-700 text-base">
