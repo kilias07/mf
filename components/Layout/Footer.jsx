@@ -109,7 +109,11 @@ export const Footer = () => {
                     <div className="mt-6">
                         <Link href="/" >
                             <a>
-                                <Image src='/assets/logo-mf-biale.png' width='172' height='41' alt="Logo MyFloor" priority/>
+                                <Image src='/assets/logo-mf-biale.png'
+                                       width='172'
+                                       height='41'
+                                       alt="Logo MyFloor"
+                                       priority/>
                             </a>
                         </Link>
 

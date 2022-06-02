@@ -73,7 +73,11 @@ export const Navbar = () => {
                     <div className="pt-5 pb-2">
                         <Link href='/' passHref>
                             <a>
-                                <Image src='/assets/logo-mf-czarne.png' width='172' height='41' alt="Logo MyFloor" priority/>
+                                <Image src='/assets/logo-mf-czarne.png'
+                                       width='172'
+                                       height='41'
+                                       alt="Logo MyFloor"
+                                       priority/>
                             </a>
                         </Link>
                     </div>

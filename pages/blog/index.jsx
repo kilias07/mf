@@ -26,7 +26,6 @@ const Index = ({posts}) => {
     if(router.isFallback){
         return <div>Loading...</div>
     }
-
     return (
         <div className="mx-auto max-w-screen-3xl">
             {posts.map(post => (
@@ -36,11 +35,11 @@ const Index = ({posts}) => {
                             <div key={post._id} className="rounded shadow-lg md:flex">
                                 <div className="relative w-full md:w-80 h-64">
                                     <Image
-                                        src={`${urlFor(post.featuredImage).url()}`}
+                                        src={`${urlFor(post.featuredImage).maxWidth(735).url()}`}
                                         alt={post.title}
                                         layout="fill"
                                         objectFit="cover"
-                                        objectPosition="center"
+                                        objectPosition="center bottom"
                                     />
                                 </div>
                                 <div className="md:px-6 px-3 py-4 md:w-7/12">
