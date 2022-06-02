@@ -1,5 +1,5 @@
-import {QUERY, algolia} from './storelocator';
 import {sanityClient} from "../../lib/sanity";
+import {algolia, QUERY} from "../../lib/webhookAlgolia";
 
 
 export default async function get(req, res) {
