@@ -27,5 +27,6 @@ export default async function post(req, res) {
     return await sanityAlgolia
         .webhookSync(sanityClient, req.body)
         .then(() => (res.status(200).send("Success!")))
-        .catch(() => (res.status(500).send("Something went wrong")));
+        .then(() => (res.status(500).send("Something went wrong")))
+        .catch((e) => (console.error(e)));
 }
