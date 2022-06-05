@@ -1,10 +1,10 @@
 import {sanityClient} from "../../lib/sanity";
-import {algolia, QUERY} from "../../lib/algolia";
+import {searchClient, QUERY} from "../../lib/algolia";
 
 
 export default async function get(req, res) {
     const geoPoints = await sanityClient.fetch(QUERY);
-    const index = algolia.initIndex('store-locator');
+    const index = searchClient.initIndex('store-locator');
     try {
         console.time(`Saving ${geoPoints.length} documents to index:`);
         await index.saveObjects(geoPoints);
