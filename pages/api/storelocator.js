@@ -1,6 +1,6 @@
 import {sanityClient} from "../../lib/sanity";
 import indexer from 'sanity-algolia';
-import {algolia, GEOPOINTS_PROJECTION} from "../../lib/webhookAlgolia";
+import {searchClient, GEOPOINTS_PROJECTION} from "../../lib/algolia";
 
 
 
@@ -13,7 +13,7 @@ export default async function post(req, res) {
         return
     }
 
-    const index = algolia.initIndex('store-locator');
+    const index = searchClient.initIndex('store-locator');
 
     const sanityAlgolia = indexer(
         {
