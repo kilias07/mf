@@ -7,11 +7,11 @@ import {searchClient, GEOPOINTS_PROJECTION} from "../../lib/algolia";
 
 export default async function post(req, res) {
 
-    // if (req.headers['content-type'] !== 'application/json') {
-    //     res.status(400)
-    //     res.json({message: 'Bad request'})
-    //     return
-    // }
+    if (req.headers['content-type'] !== 'application/json') {
+        res.status(400)
+        res.json({message: 'Bad request'})
+        return
+    }
 
     const index = searchClient.initIndex('store-locator');
 
