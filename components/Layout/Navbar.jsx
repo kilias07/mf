@@ -93,9 +93,9 @@ export const Navbar = () => {
                 </div>
                 <div className={`lg:flex items-center ${(isModalOpen ? "block" : " hidden")}`}>
                     <ul className="flex flex-col lg:flex-row lg:ml-auto">
-                        {menuItems.map((item, index) => (
+                        {menuItems.map((item) => (
                             <li
-                                key={index}
+                                key={item.title}
                                 className="md:flex-none flex justify-center">
                                 <Link href={item.link}>
                                     <a

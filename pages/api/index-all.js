@@ -1,5 +1,5 @@
 import {sanityClient} from "../../lib/sanity";
-import {algolia, QUERY} from "../../lib/webhookAlgolia";
+import {algolia, QUERY} from "../../lib/algolia";
 
 
 export default async function get(req, res) {
