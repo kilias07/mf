@@ -1,40 +1,19 @@
-import {InstantSearch, Hits, Configure} from 'react-instantsearch-hooks-web';
-import {searchClient} from "../lib/algolia";
-import {StoreComponent} from "../components/StoreComponent/StoreComponent";
+import dynamic from "next/dynamic";
 
-
-const findStore = () => {
-    const index = searchClient.initIndex('store-locator');
-
-    // index.search('query',{
-    //     aroundLatLngViaIP: true,
-    // }).then(( hits ) => {
-    //     console.log(hits);
-    // });
+export default function Home() {
+    const MapWithNoSSR = dynamic(() => import("../components/Map/Map"), {
+        ssr: false
+    });
 
     return (
-        <div className="flex w-full flex-col">
-            <div className="w-4/12 w-full">Logo</div>
-
-            <InstantSearch searchClient={searchClient} indexName="store-locator">
-                <Configure aroundRadius={"50"}/>
-                <div className="flex h-full bg-red-50">
-                    <div className="flex flex-col w-4/12 bg-gray-50">
-                <Hits hitComponent={({hit}) => (
-                    <StoreComponent
-                        store={hit}
-                        currentStore={null}
-                        onClick={()=>{}}/>)}
-                />
-                    </div>
-                    <div className="flex flex-col w-full bg-green-50">
-                        test2
-                    </div>
-
-                </div>
-            </InstantSearch>
-        </div>
+        <main className="h-[50rem]">
+            <div className="my-5 mx-10">
+                <h1 className="mb-3 sm:mb-0w-full text-center text-3xl font-bold">ZNAJDŹ SALON MY FLOOR</h1>
+                    <p className="w-full text-center">Skorzystaj z wyszukiwarki salonów by znaleźć partnera MyFloor w Twojej okolicy.</p>
+            </div>
+            <div id="map" className="w-full h-3/4 px-5 mb-10 max-w-screen-3xl mx-auto">
+                <MapWithNoSSR/>
+            </div>
+        </main>
     );
-};
-
-export default findStore;
+}

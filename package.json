@@ -11,16 +11,17 @@
   "dependencies": {
     "@portabletext/react": "^1.0.6",
     "@sanity/image-url": "^1.0.1",
-    "algoliasearch": "^4.13.1",
-    "instantsearch.js": "^4.41.0",
+    "leaflet": "^1.8.0",
+    "leaflet-defaulticon-compatibility": "^0.1.1",
+    "leaflet-geosearch": "^3.6.1",
     "next": "12.1.5",
     "next-images": "^1.8.4",
     "next-sanity": "^0.5.2",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-icons": "^4.3.1",
-    "react-instantsearch-hooks-web": "^6.26.0",
-    "sanity-algolia": "^1.0.2",
+    "react-leaflet": "^4.0.0",
+    "react-map-gl": "^7.0.15",
     "sass": "^1.51.0"
   },
   "devDependencies": {
