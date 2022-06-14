@@ -1,9 +1,10 @@
 import {sanityClient} from "../../../../lib/sanity";
 import {ProductGallery} from "../../../../components/Product/ProductGallery";
 import {ProductInfo} from "../../../../components/Product/ProductInfo";
-import {BoxReference} from "../../../../components/Product/boxRefernece";
+import {BoxReference} from "../../../../components/Product/BoxRefernece";
 import {useRouter} from "next/router";
 import Link from "next/link";
+import {LogosSection} from "../../../../components/MainSite/LogosSection";
 
 const certificateQuery = `*[_type == 'certifcateLogo']{
     _id,
@@ -15,8 +16,9 @@ const ProductSlug = ({productData, certificateLogos}) => {
     const collectionName = productData.collection.title
     const router = useRouter();
     const {query: path} = router;
+    const {gallery} = productData
 
-    if(router.isFallback){
+    if (router.isFallback) {
         return <div>Loading...</div>
     }
 
@@ -30,11 +32,15 @@ const ProductSlug = ({productData, certificateLogos}) => {
                 <Link href="/kolekcje"><a className="capitalize">kolekcje/</a></Link>
                 <Link href={`/kolekcje/${path.slug}`}><a className="capitalize">{collectionName}</a></Link>
             </div>
-            <div className="flex max-w-screen-3xl mx-auto justify-center px-12">
-                <ProductGallery/>
+            <div className="flex justify-center flex-wrap max-w-screen-3xl mx-auto">
+                <ProductGallery gallery={gallery}/>
                 <ProductInfo productInfo={productData}/>
             </div>
-            <BoxReference logos={certificateLogos}/>
+            <div className="my-10">
+                <BoxReference exception="struktury"/>
+            </div>
+
+            <LogosSection logos={certificateLogos}/>
         </div>
     );
 };
@@ -67,6 +73,7 @@ export async function getStaticProps({params}) {
     featuredImage,
     _id,
     href,
+    gallery,
     description,
     collection->
     }`;

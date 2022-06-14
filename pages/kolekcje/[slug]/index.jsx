@@ -2,37 +2,41 @@ import {sanityClient, urlFor} from "../../../lib/sanity";
 import {useRouter} from 'next/router';
 import Link from "next/link";
 import Image from "next/image";
+import {Path} from "../../../components/Path";
 
 
 const CollectionSlug = ({products}) => {
     const router = useRouter();
 
-    if(router.isFallback){
+    if (router.isFallback) {
         return <div>Loading...</div>
     }
     return (
-        <div className="max-w-screen-3xl mx-auto flex flex-wrap my-32 justify-center">
-            {products.map(product => (
-                <div key={product._id} className="w-80 h-80 m-5 relative">
-                    <Link href={`${router.asPath}/${product.slug.current}/`}>
-                        <a>
-                                <Image src={`${urlFor(product.featuredImage)}`}
-                                       alt={product.title}
-                                       layout="fill"
-                                       priority
-                                       width="100%"
-                                       height="100%"
-                                       objectFit="cover"/>
-                                <div className="z-10 top-[276px] relative bottom-11 text-slate-200 bg-gray-600 bg-opacity-70 py-2">
-                                    <p className="text-center text-xl uppercase">
+        <>
+            <Path pathTitle={router.query.slug.replace('-','')}/>
+            <div className="max-w-screen-3xl mx-auto flex flex-wrap my-32 justify-center">
+                {products.map(product => (
+                    <div key={product._id} className="w-80 h-80 m-5">
+                        <Link href={`${router.asPath}/${product.slug.current}/`}>
+                            <a>
+                                <div className="relative w-full h-full">
+                                    <Image src={`${urlFor(product.featuredImage)}`}
+                                           alt={product.title}
+                                           layout="fill"
+                                           priority
+                                           objectFit="cover"/>
+                                </div>
+                                <div className="-top-11 relative text-slate-200 bg-gray-800 bg-opacity-50 py-2">
+                                    <p className="text-center text-xl font-light uppercase">
                                         {product.title}
                                     </p>
-                            </div>
-                        </a>
-                    </Link>
-                </div>
-            ))}
-        </div>
+                                </div>
+                            </a>
+                        </Link>
+                    </div>
+                ))}
+            </div>
+        </>
     );
 };
 

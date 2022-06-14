@@ -69,7 +69,7 @@ export const Navbar = () => {
     return (
         <nav className="shadow-bottom" ref={ref}>
             <div className="lg:flex items-center justify-between h-22 items-center container mx-auto">
-                <div className="mx-auto flex flex-wrap justify-between xl:basis-4/12">
+                <div className="mx-auto flex flex-wrap justify-between xl:basis-6/12">
                     <div className="pt-5 pb-2">
                         <Link href='/' passHref>
                             <a>
@@ -100,7 +100,7 @@ export const Navbar = () => {
                                 <Link href={item.link}>
                                     <a
                                         onClick={openCloseHamburger}
-                                        className="mx-3 py-2 flex items-center uppercase text-sm font-bold hover:opacity-75 leading-snug text-center">{item.title}
+                                        className="mx-3 py-2 flex items-center uppercase text-sm font-medium hover:opacity-75 leading-snug text-center">{item.title}
                                     </a>
                                 </Link>
                             </li>

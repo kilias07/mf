@@ -1,8 +1,8 @@
 import {PortableText, PortableTextComponentsProvider,} from '@portabletext/react'
+import Image from "next/image";
 
 
 export const ProductInfo = ({productInfo}) => {
-    // console.log(productInfo.collection.properties[0])
 
     const properties = productInfo.collection.properties[0];
     const components = {
@@ -16,7 +16,7 @@ export const ProductInfo = ({productInfo}) => {
     }
 
     return (
-        <div className="w-1/2 h-screen p-3">
+        <div className="md:w-[40rem] md:p-3">
             <div className="text-grayText uppercase">
                 <p className="text-3xl font-medium">{productInfo.title}</p>
                 <p className="text-2xl font-light">{productInfo.code}</p>
@@ -25,7 +25,7 @@ export const ProductInfo = ({productInfo}) => {
                 <a href={productInfo.href}
                    target="_blank"
                    rel="noopener noreferrer"
-                   className="px-4 py-3 bg-blueButton uppercase text-zinc-100">
+                   className="px-4 py-3 bg-blueButton uppercase text-white">
                     Pokaż w kreatorze wnętrz
                 </a>
             </div>
@@ -92,6 +92,17 @@ export const ProductInfo = ({productInfo}) => {
                 </div>
                 <hr/>
 
+            </div>
+            <div className="flex">
+                <div className="w-24 h-24 mt-8">
+                    <Image src="/assets/aquaProtect.png" height="200" width="179" layout="responsive"/>
+                </div>
+                <div className="w-24 h-24 mt-8">
+                    <Image src="/assets/scratchProtect.png" height="200" width="179"/>
+                </div>
+                <div className="w-24 h-24 mt-8">
+                    <Image src="/assets/swellProtect.png" height="200" width="179"/>
+                </div>
             </div>
         </div>
     );

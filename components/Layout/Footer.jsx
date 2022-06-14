@@ -32,17 +32,17 @@ export const Footer = () => {
                             </Link>
                         </p>
                         <p className="mb-2 flex justify-center md:justify-start">
-                            <Link href="/blog">
+                            <Link href="/zastosowanie/podlogi-do-salonu">
                                 <a className="">Podłogi do salonu</a>
                             </Link>
                         </p>
                         <p className="mb-2 flex justify-center md:justify-start">
-                            <Link href="/blog">
+                            <Link href="/zastosowanie/podlogi-do-kuchni">
                                 <a className="">Podłogi do kuchni</a>
                             </Link>
                         </p>
                         <p className="mb-2 flex justify-center md:justify-start">
-                            <Link href="/blog">
+                            <Link href="/zastosowanie/podlogi-do-sypialni">
                                 <a className="">Podłogi do sypialni</a>
                             </Link>
                         </p>
@@ -51,7 +51,7 @@ export const Footer = () => {
 
                     <div className="mt-6">
                         <p className="uppercase mb-2 flex justify-center md:justify-start">
-                            <Link href="/infromacje">
+                            <Link href="/informacje">
                                 <a>informacje</a>
                             </Link>
                         </p>
@@ -61,7 +61,7 @@ export const Footer = () => {
                             </Link>
                         </p>
                         <p className="capitalize mb-2 flex justify-center md:justify-start">
-                            <Link href="/powierzchnie-i-struktury">
+                            <Link href="/do-pobrania">
                                 <a>do pobrania</a>
                             </Link>
                         </p>
@@ -101,6 +101,11 @@ export const Footer = () => {
                         <p className="mb-2 flex justify-center md:justify-start">
                             <Link href="/mapa-strony">
                                 <a>Mapa strony</a>
+                            </Link>
+                        </p>
+                        <p className="mb-2 flex justify-center md:justify-start">
+                            <Link href="/polityka-prywatnosci">
+                                <a>Polityka prywatności</a>
                             </Link>
                         </p>
 

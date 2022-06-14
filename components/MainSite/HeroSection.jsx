@@ -11,8 +11,6 @@ export const HeroSection = ({content}) => {
                     <Image
                         src={`${urlFor(image)}`}
                         alt={title}
-                        width="1920"
-                        height="1080"
                         layout="fill"
                         priority
                         objectFit="contain"
@@ -30,7 +28,7 @@ export const HeroSection = ({content}) => {
                     </div>
                 </div>
 
-            <p className="text-lg text-center w-8/12 mx-auto my-12">Dzięki niesamowitemu realizmowi, autentycznym
+            <p className="text-lg font-light text-center w-8/12 mx-auto my-12">Dzięki niesamowitemu realizmowi, autentycznym
                 fakturom drewna i żywym kolorom, na nowo odkryliśmy podłogę laminowaną. Najnowsza technologia sprawia,
                 że nasze podłogi są odporne na uszkodzenia, zarysowania i plamy oraz nie wymagają dodatkowej
                 konserwacji. Idealnie nadają się do ogrzewania podłogowego.</p>

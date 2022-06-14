@@ -1,39 +1,37 @@
 import {sanityClient, urlFor} from "../../lib/sanity";
-import Link from "next/link";
-import {useRouter} from "next/router";
-import Image from "next/image";
 import {Path} from "../../components/Path";
+import Link from "next/link";
+import Image from "next/image";
+import {useRouter} from "next/router";
 
-
-const postsQuery = `*[_type == "posts"]{
-  _id,
-  title,
-  description,
-  shortDescription,
-  featuredImage,
-  slug
+const usageQuery = `*[_type == "usage"]{
+title,
+slug,
+_id,
+shortDescription,
+featuredImage
 }`;
 
+
 export async function getStaticProps() {
-    const posts = await sanityClient.fetch(postsQuery);
+    const posts = await sanityClient.fetch(usageQuery);
     return {
         props: {posts}
     }
 }
 
-const Index = ({posts}) => {
+const Usage = ({posts}) => {
     const router = useRouter();
 
     if(router.isFallback){
         return <div>Loading...</div>
     }
     return (
-        <div className="mx-auto max-w-screen-3xl">
-            <Path pathTitle="blog"/>
-
+        <div>
+            <Path pathTitle={router.pathname.slice(1)}/>
             {posts.map((post, i) => (
                 <div className="mx-4 my-6 md:mx-32" key={post._id}>
-                    <Link href={`/blog/${post.slug.current}`}>
+                    <Link href={`/zastosowanie/${post.slug.current}`}>
                         <a>
                             <div key={post._id} className={`rounded shadow-lg md:flex ${i%2 && 'flex-row-reverse'}`}>
                                 <div className="relative w-full md:w-80 h-56">
@@ -60,4 +58,4 @@ const Index = ({posts}) => {
     );
 };
 
-export default Index;
+export default Usage;

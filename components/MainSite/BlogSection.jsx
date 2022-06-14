@@ -4,22 +4,27 @@ import Link from "next/link";
 
 export const BlogSection = ({posts}) => {
     return (
-        <div className="mx-auto flex flex-wrap justify-center">
-            {posts.map(post => (
-                <Link href={`/blog/${post.slug.current}`} key={post._id}>
+    <div className="flex flex-wrap justify-center">
+        {posts.map(post => (
+            <div key={post.title} className={`w-96 h-80 mx-5 my-5 relative`}>
+                <Link href={`/blog/${post.slug.current}`}
+                      passHref>
                     <a>
-                        <div className="mx-3">
+                        <div className="relative w-full h-full">
                             <Image src={urlFor(post.featuredImage).url()}
                                    alt={post.title}
-                                   width="300px"
-                                   height="300px"
-                                   objectFit="cover"/>
-                            <p className="text-base">{post.title}</p>
+                                   layout="fill"
+                                   objectFit="cover"
+                            />
                         </div>
+                            <p className="text-xl font-light font-sans text-base">
+                                {post.title}
+                            </p>
                     </a>
                 </Link>
-            ))}
-        </div>
+            </div>
+        ))}
+    </div>
     );
 };
 
