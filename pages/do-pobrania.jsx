@@ -20,7 +20,6 @@ export async function getStaticProps() {
 const download = ({files}) => {
 
     const catalog = files.filter(file => file.title === "Katalog MF");
-    console.log(catalog)
     return (
         <div>
             <Path pathTitle="do pobrania"/>
